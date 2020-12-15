@@ -40,7 +40,7 @@ public class Base_0 {
         //-5    正5的原码为：0000 0101，负数原码等于最高位为1：1000 0101，反码：1111 1010  补码：1111 1011。再转换为原码为：先减1变成反码 1111 1010，再取反得到原码：1000 0101 = -5
         //sum();
         //sum1();
-        Scanner scanner = new Scanner(System.in);
+        /*Scanner scanner = new Scanner(System.in);
         System.out.println("请输入一个整数：");
         int num = scanner.nextInt();
         int a = num;
@@ -48,7 +48,7 @@ public class Base_0 {
         for(;num >=1;num--){
             sum = sum * num;
         }
-        System.out.println(a + "的阶乘为：" + sum);
+        System.out.println(a + "的阶乘为：" + sum);*/
         /*
         while(true){
             System.out.println("请输入一个整数：");
@@ -59,7 +59,19 @@ public class Base_0 {
             }
             System.out.println(Integer.toBinaryString(num));
         }*/
-
-
+        boolean flag = true;
+        Scanner scanner = new Scanner(System.in);
+        for(int i = 0;i < 10;i++){
+            System.out.println("111");
+            int c = scanner.nextInt();
+            if(c == 666){
+                break;
+            }
+            if(flag){
+                System.out.println("正常退出");
+            }else{
+                System.out.println("异常退出");
+            }
+        }
     }
 }
