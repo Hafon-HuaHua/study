@@ -6,7 +6,7 @@ package com.study.base.pattern.singleton;
  * 优点：加载类时不需要实例化
  */
 public class Singleton_2 {
-    private static volatile Singleton_2 singleton2;
+    private static volatile Singleton_2 singleton2; //加volatile的原因是防止指令重排导致的线程不安全，属于极端情况
     private static Object object = new Object();
     private Singleton_2(){}
 
