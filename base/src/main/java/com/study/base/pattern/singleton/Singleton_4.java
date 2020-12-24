@@ -7,8 +7,4 @@ package com.study.base.pattern.singleton;
  */
 public enum Singleton_4 {
     INSTANCE;
-
-    public Singleton_4 getInstance(){
-        return INSTANCE;
-    }
 }
