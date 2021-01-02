@@ -1,10 +1,10 @@
 package com.study.base.pattern.abstractfactory;
 
-public abstract class AbstractFactory {
+public interface AbstractFactory {
 
-    abstract Fly createFly();
+    Fly createFly();
 
-    abstract Land createLand();
+    Land createLand();
 
-    abstract Sea createSea();
+    Sea createSea();
 }

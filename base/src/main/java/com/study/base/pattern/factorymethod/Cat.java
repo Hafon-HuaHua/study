@@ -1,9 +1,9 @@
 package com.study.base.pattern.factorymethod;
 
-public class Cat extends Animal{
+public class Cat implements Animal{
 
     @Override
-    void jiao() {
+    public void jiao() {
         System.out.println("miao miao miao");
     }
 }

@@ -1,5 +1,5 @@
 package com.study.base.pattern.factorymethod;
 
-public abstract class AnimalFactory {
-    abstract Animal createAnimal();
+public interface AnimalFactory {
+    Animal createAnimal();
 }

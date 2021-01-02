@@ -1,8 +1,8 @@
 package com.study.base.pattern.abstractfactory;
 
-public class Dog extends Land {
+public class Dog implements Land {
     @Override
-    void run() {
+    public void run() {
         System.out.println("dog run");
     }
 }

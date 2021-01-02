@@ -1,6 +1,6 @@
 package com.study.base.pattern.abstractfactory;
 
-public class Factory2 extends AbstractFactory{
+public class Factory2 implements AbstractFactory{
 
     @Override
     public Fly createFly(){

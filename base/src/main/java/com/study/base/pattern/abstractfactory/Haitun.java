@@ -1,8 +1,8 @@
 package com.study.base.pattern.abstractfactory;
 
-public class Haitun extends Sea {
+public class Haitun implements Sea {
     @Override
-    void swim() {
+    public void swim() {
         System.out.println("hantun swim");
     }
 }

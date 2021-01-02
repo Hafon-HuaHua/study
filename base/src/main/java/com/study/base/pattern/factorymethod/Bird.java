@@ -1,8 +1,8 @@
 package com.study.base.pattern.factorymethod;
 
-public class Bird extends Animal{
+public class Bird implements Animal{
     @Override
-    void jiao() {
+    public void jiao() {
         System.out.println("ji ji ji");
     }
 }

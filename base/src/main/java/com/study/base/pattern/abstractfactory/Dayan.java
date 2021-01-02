@@ -1,8 +1,8 @@
 package com.study.base.pattern.abstractfactory;
 
-public class Dayan extends Fly{
+public class Dayan implements Fly{
     @Override
-    void fly() {
+    public void fly() {
         System.out.println("da yan fly");
     }
 }

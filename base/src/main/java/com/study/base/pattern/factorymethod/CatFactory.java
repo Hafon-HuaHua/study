@@ -1,9 +1,9 @@
 package com.study.base.pattern.factorymethod;
 
-public class CatFactory extends AnimalFactory{
+public class CatFactory implements AnimalFactory{
 
     @Override
-    Animal createAnimal() {
+    public Animal createAnimal() {
         return new Cat();
     }
 }

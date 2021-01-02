@@ -1,8 +1,8 @@
 package com.study.base.pattern.abstractfactory;
 
-public class Bird extends Fly {
+public class Bird implements Fly {
     @Override
-    void fly() {
+    public void fly() {
         System.out.println("bird fly");
     }
 }
