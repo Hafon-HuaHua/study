@@ -1,6 +1,6 @@
 package com.study.base.pattern.strategy;
 
-public class Cat implements CompareAble<Cat> {
+public class Cat {
     private int weight;
     private int height;
 
@@ -8,15 +8,20 @@ public class Cat implements CompareAble<Cat> {
         this.weight = weight;
         this.height = height;
     }
-    @Override
-    public int compareTo(Cat c){
-        if(this.weight > c.weight){
-            return 1;
-        }else if(this.weight < c.weight){
-            return -1;
-        }else{
-            return 0;
-        }
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
     }
 
     @Override
