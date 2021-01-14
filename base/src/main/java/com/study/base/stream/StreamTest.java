@@ -42,6 +42,7 @@ public class StreamTest {
 
     }
     private static void read(){
+        long t1 = System.currentTimeMillis();
         try(InputStream in = new FileInputStream("stream.txt")){
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
             byte[] bytes = new byte[1024];
@@ -53,8 +54,11 @@ public class StreamTest {
         }catch (Exception e){
             e.printStackTrace();
         }
+        long t2 = System.currentTimeMillis();
+        System.out.println("read操作时间：" + (t2 -t1));
     }
     private static void read_1(){
+        long t1 = System.currentTimeMillis();
         try(InputStream in = new BufferedInputStream(new FileInputStream("stream.txt"))){
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
             byte[] bytes = new byte[1024];
@@ -67,8 +71,11 @@ public class StreamTest {
         }catch (Exception e){
             e.printStackTrace();
         }
+        long t2 = System.currentTimeMillis();
+        System.out.println("read_1操作时间：" + (t2 -t1));
     }
     private static void read_2(){
+        long t1 = System.currentTimeMillis();
         try(Reader reader = new InputStreamReader(new BufferedInputStream(new FileInputStream("stream.txt")))){
             char[] bytes = new char[1024];
             reader.read(bytes);
@@ -76,8 +83,11 @@ public class StreamTest {
         }catch (Exception e){
             e.printStackTrace();
         }
+        long t2 = System.currentTimeMillis();
+        System.out.println("read_2操作时间：" + (t2 -t1));
     }
     private static void read_3(){
+        long t1 = System.currentTimeMillis();
         try(Reader reader = new InputStreamReader(new BufferedInputStream(new FileInputStream("stream.txt")))){
             CharArrayWriter writer = new CharArrayWriter();
             char[] chars = new char[1024];
@@ -89,6 +99,8 @@ public class StreamTest {
         }catch (Exception e){
             e.printStackTrace();
         }
+        long t2 = System.currentTimeMillis();
+        System.out.println("read_3操作时间：" + (t2 -t1));
     }
     private static void datOutPut(){
         List<Hafon> list = Arrays.asList(new Hafon(1, "h1"), new Hafon(2, "h2"));
@@ -155,6 +167,6 @@ public class StreamTest {
         for(Hafon h : list){
             System.out.println(h);
         }*/
-        read_3();
+        read_2();
     }
 }
