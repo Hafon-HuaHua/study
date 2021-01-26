@@ -1,4 +1,4 @@
-package com.study.base.socket;
+package com.study.base.io;
 
 import java.io.*;
 import java.net.ServerSocket;

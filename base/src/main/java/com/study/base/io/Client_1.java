@@ -1,10 +1,10 @@
-package com.study.base.socket;
+package com.study.base.io;
 
 import java.io.*;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class Client_2 {
+public class Client_1 {
     public static void main(String[] args) {
         try(Socket socket = new Socket("localhost",8080);
             BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
