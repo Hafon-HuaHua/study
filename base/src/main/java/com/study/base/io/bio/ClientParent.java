@@ -1,4 +1,4 @@
-package com.study.base.io;
+package com.study.base.io.bio;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -31,5 +31,5 @@ public abstract class ClientParent {
             e.printStackTrace();
         }
     }
-    abstract void testClient();
+    protected abstract void testClient();
 }
