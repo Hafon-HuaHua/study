@@ -41,6 +41,15 @@ public class StreamTest {
         }
 
     }
+    private static void write_2_1(){
+        try(BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("stream.txt")))){
+            String writeText = "test hafon writeStream_2_1 哦哦哦";
+            writer.write(writeText);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
     private static void read(){
         long t1 = System.currentTimeMillis();
         try(InputStream in = new FileInputStream("stream.txt")){
@@ -77,6 +86,18 @@ public class StreamTest {
     private static void read_2(){
         long t1 = System.currentTimeMillis();
         try(Reader reader = new InputStreamReader(new BufferedInputStream(new FileInputStream("stream.txt")))){
+            char[] bytes = new char[1024];
+            reader.read(bytes);
+            System.out.println(new String(bytes));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        long t2 = System.currentTimeMillis();
+        System.out.println("read_2操作时间：" + (t2 -t1));
+    }
+    private static void read_2_1(){
+        long t1 = System.currentTimeMillis();
+        try(BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("stream.txt")))){
             char[] bytes = new char[1024];
             reader.read(bytes);
             System.out.println(new String(bytes));
@@ -167,6 +188,7 @@ public class StreamTest {
         for(Hafon h : list){
             System.out.println(h);
         }*/
-        read_2();
+        //read_2_1();
+        write_2_1();
     }
 }
