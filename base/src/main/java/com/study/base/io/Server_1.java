@@ -10,40 +10,43 @@ import java.net.Socket;
  */
 public class Server_1 {
     public static void main(String[] args) {
-        try(ServerSocket serverSocket = new ServerSocket(8080);){
-
+        try(ServerSocket serverSocket = new ServerSocket(8080)){
             while (true){
                 Socket socket = null;
-                InputStream in = null;
-                OutputStream out = null;
+                BufferedReader reader = null;
+                BufferedWriter writer = null;
                 try{
                     //如果没有客户端连接则阻塞(第一次阻塞)
                     System.out.println("等待客户端链接...");
                     socket = serverSocket.accept();
                     System.out.println("客户端连接成功");
                     //InputStream inputStream = new BufferedInputStream(socket.getInputStream());
-                    in = socket.getInputStream();
-                    out = socket.getOutputStream();
+                    reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                    writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
                     while (true){
-                        byte[] bytes = new byte[1024];
+                        char[] bytes = new char[1024];
                         //in.read第二次阻塞，此时如果第一个连接阻塞在这里其它的客户端只能等待无法向下执行
-                        int count = in.read(bytes);
+                        int count = reader.read(bytes);
                         if(count == -1){
                             break;
                         }
-                        System.out.println("服务端接收的信息为：" + new String(bytes,0,count));
-                        out.write("服务端已收到你发送的数据".getBytes());
-                        out.flush();
+                        String str = new String(bytes,0,count);
+                        if("shutdown".equals(str)){
+                            break;
+                        }
+                        System.out.println("服务端接收的信息为：" + str);
+                        writer.write("服务端已收到你发送的数据");
+                        writer.flush();
                     }
                 }finally {
                     if(socket!= null){
                         socket.close();
                     }
-                    if(in != null){
-                        in.close();
+                    if(reader != null){
+                        reader.close();
                     }
-                    if(out != null){
-                        out.close();
+                    if(writer != null){
+                        writer.close();
                     }
                 }
 

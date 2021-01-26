@@ -17,7 +17,7 @@ public class Client_1 {
                 char[] bytes = new char[1024];
                 int count = reader.read(bytes);
                 if(count == -1){
-                    continue;
+                    break;
                 }
                 System.out.println("客户端收到服务端返回的信息为：" + new String(bytes,0,count));
             }
