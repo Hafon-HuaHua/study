@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.study.main.mapper.UoimauthMapper" >
+  <resultMap id="BaseResultMap" type="com.study.main.domain.Uoimauth" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="vin" property="vin" jdbcType="VARCHAR" />
+    <result column="sale_time" property="saleTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from uoimauth
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.study.main.domain.Uoimauth" >
+    insert into uoimauth (id, vin, sale_time
+      )
+    values (#{id,jdbcType=BIGINT}, #{vin,jdbcType=VARCHAR}, #{saleTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.study.main.domain.Uoimauth" >
+    update uoimauth
+    set vin = #{vin,jdbcType=VARCHAR},
+      sale_time = #{saleTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select id, vin, sale_time
+    from uoimauth
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, vin, sale_time
+    from uoimauth
+  </select>
+</mapper>
