@@ -99,7 +99,7 @@
         </javaClientGenerator>
 
         <!--建立与数据库中哪张表的关系映射-->
-        <table tableName="uoimauth">
+        <table tableName="t_vehicle_sale_record">
 
         </table>
 
