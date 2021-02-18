@@ -1,5 +1,8 @@
 package com.study.base.pattern.filter;
 
+/**
+ * 责任链
+ */
 public class Test {
     public static void main(String[] args) {
         Request request = new Request();
