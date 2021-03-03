@@ -1,4 +1,4 @@
-package com.study.base.pattern.observer;
+package com.study.base.pattern.observer.ob1;
 
 import java.util.LinkedList;
 import java.util.List;

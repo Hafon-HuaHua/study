@@ -1,4 +1,4 @@
-package com.study.base.pattern.observer;
+package com.study.base.pattern.observer.ob1;
 
 public class Test {
     public static void main(String[] args) {
