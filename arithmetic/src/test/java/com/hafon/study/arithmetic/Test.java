@@ -14,11 +14,11 @@ public class Test {
 
     public static void main(String[] args) {
 //        Hafon1 h1 = new Hafon1();
-        show();
-        String s1 = "hello";
-        String s2 = "hello";
-        s1 = "world";
-        System.out.println(s1);
-        System.out.println(s2);
+//        show();
+//        String s1 = "hello";
+//        String s2 = "hello";
+//        s1 = "world";
+//        System.out.println(s1);
+//        System.out.println(s2);
     }
 }

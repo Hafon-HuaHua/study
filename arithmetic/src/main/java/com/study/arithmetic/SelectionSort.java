@@ -15,7 +15,7 @@ public class SelectionSort {
         int n = arr.length;
         for(int i = 0;i<n;i++){ //0，1，2....
             int minValIndex = i;
-            for(int j = i+1;j<n;j++){//第2个数与第1个数比较，小的交换位置
+            for(int j = i+1;j<n;j++){//第2个数与第1个数比较，小的记录索引位置并替换
                 minValIndex = arr[j] < arr[minValIndex] ? j : minValIndex;
             }
             swap(arr,i,minValIndex);
